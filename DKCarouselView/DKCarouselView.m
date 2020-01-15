@@ -276,6 +276,11 @@ typedef void(^DKCarouselViewTapBlock)();
         if ([item isKindOfClass:[DKCarouselURLItem class]]) {
             NSString *imageUrl = [(DKCarouselURLItem *)item imageUrl];
             [itemView sd_setImageWithURL:[NSURL URLWithString:imageUrl] placeholderImage:self.defaultImage];
+            
+            if ([(DKCarouselURLItem *)item contentMode] != NULL) {
+                [itemView setContentMode: [(DKCarouselURLItem *)item contentMode]];
+            }
+            
         } else if ([item isKindOfClass:[DKCarouselViewItem class]]) {
             UIView *customView = [(DKCarouselViewItem *)item view];
             customView.frame = itemView.bounds;
