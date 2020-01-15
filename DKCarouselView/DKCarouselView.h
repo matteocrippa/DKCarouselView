@@ -21,6 +21,7 @@
 @interface DKCarouselURLItem : DKCarouselItem
 
 @property (nonatomic, copy) NSString *imageUrl;
+@property (nonatomic, assign) UIViewContentMode contentMode;
 
 @end
 
